@@ -1,0 +1,17 @@
+.dub
+.vscode
+docs.json
+__dummy.html
+docs/
+/makegtkdclass
+makegtkdclass.so
+makegtkdclass.dylib
+makegtkdclass.dll
+makegtkdclass.a
+makegtkdclass.lib
+makegtkdclass-test-*
+*.exe
+*.o
+*.obj
+*.lst
+dub.selections.json

@@ -1,0 +1,13 @@
+{
+	"authors": [
+		"Ferhat Kurtulmuş"
+	],
+	"copyright": "Copyright © 2019, Ferhat Kurtulmu�",
+	"dependencies": {
+		"dxml": "~>0.4.1",
+		"mustache-d": "~>0.1.3"
+	},
+	"description": "Create gtkd window classes from glade files.",
+	"license": "boost",
+	"name": "makegtkdclass"
+}
