@@ -9,5 +9,6 @@
 	},
 	"description": "Create gtkd window classes from glade files.",
 	"license": "boost",
-	"name": "makegtkdclass"
+	"name": "makegtkdclass",
+	"version": "0.0.1"
 }
