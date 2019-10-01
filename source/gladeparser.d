@@ -41,46 +41,46 @@ private {
 }
 
 auto getWidgetObjects(string gstr){
-	auto dom = parseDOM(gstr);
-	
-	DOMEntity!string iroot;
+    auto dom = parseDOM(gstr);
+    
+    DOMEntity!string iroot;
 
-	foreach(i; 0 .. dom.children.length)
-		if(dom.children[i].type != EntityType.comment)
-			if(dom.children[i].name == "interface")
-				iroot = dom.children[i];
-	
-	checkAppWindow(iroot);
+    foreach(i; 0 .. dom.children.length)
+        if(dom.children[i].type != EntityType.comment)
+            if(dom.children[i].name == "interface")
+                iroot = dom.children[i];
+    
+    checkAppWindow(iroot);
 
-	string[string][] objects;
+    string[string][] objects;
 
     void parseObjects(DOMEntity!string root){
         try{
-			if((root.type == EntityType.elementEmpty) || (root.type == EntityType.text)) return;
-			foreach(i; 0 .. root.children.length){
-            	auto child = root.children[i];
-				if((child.type == EntityType.elementEmpty) || (child.type == EntityType.text)) continue;
-				if ((child.name == "object") && (child.hasAttr("id"))){
-					string id = "";
-					string cname = "";
-					foreach(attr; child.attributes){
-						if(attr.name == "id")
-							id = attr.value;
-						if(attr.name == "class")
-							cname = attr.value;
-					}
-					auto el = ["class": cname, "id": id];
+            if((root.type == EntityType.elementEmpty) || (root.type == EntityType.text)) return;
+            foreach(i; 0 .. root.children.length){
+                auto child = root.children[i];
+                if((child.type == EntityType.elementEmpty) || (child.type == EntityType.text)) continue;
+                if ((child.name == "object") && (child.hasAttr("id"))){
+                    string id = "";
+                    string cname = "";
+                    foreach(attr; child.attributes){
+                        if(attr.name == "id")
+                            id = attr.value;
+                        if(attr.name == "class")
+                            cname = attr.value;
+                    }
+                    auto el = ["class": cname, "id": id];
                     el.writeln;
-					objects ~= el;
-				}
-				
+                    objects ~= el;
+                }
+                
                 parseObjects(child);
-			}
+            }
         } catch (Exception exc) {
             return;
-		}
-	}
+        }
+    }
 
     parseObjects(iroot);
-	return objects;
+    return objects;
 }
