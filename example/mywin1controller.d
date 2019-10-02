@@ -16,8 +16,6 @@ import gtk.Builder, gtk.Widget, gdk.Event;
 import gtk.ApplicationWindow;
 import gtk.Box;
 import gtk.Label;
-import gtk.Box;
-import gtk.Label;
 import gtk.Entry;
 import gtk.Button;
 

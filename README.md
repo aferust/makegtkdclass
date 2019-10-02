@@ -7,8 +7,8 @@ A small utility for lazily generating gtkd window classes from glade files. It i
 ```
 
 ## Dependencies
-[dxml](https://github.com/jmdavis/dxml)
-[mustache-d](https://github.com/repeatedly/mustache-d)
+-[dxml](https://github.com/jmdavis/dxml)
+-[mustache-d](https://github.com/repeatedly/mustache-d)
 
 ## A use case:
 - Your glade file must contain only one root widget.
@@ -62,4 +62,4 @@ void main(string[] args) {
 }
 ```
 
-Please refer to example folder to see the resulting files of an example conversion process.
+Please refer to the example folder to see the resulting files of an example conversion process.
